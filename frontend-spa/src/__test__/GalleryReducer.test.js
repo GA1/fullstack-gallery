@@ -13,7 +13,7 @@ describe('galleryReducer', () => {
   it('should properly add images from first page', () => {
     expect(r({
       images: [],
-      isLoading: false,
+      isLoading: true,
     }, {
       type: "ADD_IMAGES_FROM_BACKEND",
       payload: {

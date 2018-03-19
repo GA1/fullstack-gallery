@@ -10,6 +10,7 @@ const galleryReducer = (state = {
       state = {
         ...state,
         images: state.images.concat(payload.images),
+        isLoading: false,
       };
       break;
 

@@ -8,11 +8,12 @@ function mapFlickrPhoto(flickrPhotoObject) {
   var title = 'NO TITLE'
   if (!!flickrPhotoObject['title'])
       title = flickrPhotoObject['title']
-  return {
+  let result = {
     'smallUrl': generateSmallUrl(farm, server, id, secret),
     'bigUrl': generateBigUrl(farm, server, id, secret),
     'title': title,
-  }
+  };
+  return result
 }
 
 module.exports.mapFlickrPhoto = mapFlickrPhoto;

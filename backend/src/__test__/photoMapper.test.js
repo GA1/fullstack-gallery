@@ -10,7 +10,7 @@ test('map flickr object to a photo', () => {
     title: 'dummyTitle'
   }
   let expected = {
-    'smallUrl': "http://farm1.staticflickr.com/2/3_4_m.jpg",
+    'smallUrl': "http://farm1.staticflickr.com/2/3_4_n.jpg",
     'bigUrl': "http://farm1.staticflickr.com/2/3_4_z.jpg",
     'title': 'dummyTitle'
   }
@@ -26,7 +26,7 @@ test('map flickr object to a photo when no title', () => {
     title: undefined
   }
   let expected = {
-    'smallUrl': "http://farm1.staticflickr.com/2/3_4_m.jpg",
+    'smallUrl': "http://farm1.staticflickr.com/2/3_4_n.jpg",
     'bigUrl': "http://farm1.staticflickr.com/2/3_4_z.jpg",
     'title': 'NO TITLE'
   }

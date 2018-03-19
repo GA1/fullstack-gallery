@@ -41,7 +41,8 @@ class Gallery extends Component {
 
   getImagesFromBackend() {
     var $this = this
-    axios.get('/api/v1/images/randomImages')
+    this.props.startLoadingImagesFromBackend()
+    axios.get('/api/v1/images/sportImages')
       .then((resp) => {
         let body = resp.data;
         $this.props.addImagesReceivedFromBackend(body)
@@ -61,7 +62,7 @@ class Gallery extends Component {
       <div className="gallery">
         <Masonry options={masonryOptions} >
           {
-            this.props.images.map((image, index) => (<Image key={index} url={image.url} />))
+            this.props.images.map((image, index) => (<Image key={index} smallUrl={image.smallUrl} />))
           }
         </Masonry>
         {

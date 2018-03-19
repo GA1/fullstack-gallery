@@ -1,7 +1,7 @@
 var axios = require('axios')
 
 function generateSmallUrl(farm, server, id, secret) {
-  return `http://farm${farm}.staticflickr.com/${server}/${id}_${secret}_m.jpg`
+  return `http://farm${farm}.staticflickr.com/${server}/${id}_${secret}_n.jpg`
 }
 
 function generateBigUrl(farm, server, id, secret) {

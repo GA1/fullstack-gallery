@@ -43,7 +43,7 @@ class Gallery extends Component {
     console.log(this.props.nextPageNumber)
     var $this = this
     this.props.startLoadingImagesFromBackend()
-    axios.get('/api/v1/images/sportImages?page=' + this.props.nextPageNumber)
+    axios.get('/api/v1/images/sportImages?pageNumber=' + this.props.nextPageNumber)
       .then((resp) => {
         let body = resp.data;
         $this.props.addImagesReceivedFromBackend(body)
@@ -63,7 +63,10 @@ class Gallery extends Component {
       <div className="gallery">
         <Masonry options={masonryOptions} >
           {
-            this.props.images.map((image, index) => (<Image key={index} smallUrl={image.smallUrl} />))
+            this.props.images.map((image, index) => (<Image key={index}
+                                                            smallUrl={image.smallUrl}
+                                                            title={image.title}
+            />))
           }
         </Masonry>
         {

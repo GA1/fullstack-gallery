@@ -1,28 +1,72 @@
 .gallery-image {
     max-width: 100%;
+    min-width: 100%;
+}
+
+
+.image-and-title-caption-container {
+    position: relative;
+    box-sizing: border-box;
+}
+
+.title-caption-container {
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 10px;
+    position: absolute;
+    width: calc(100% - 40px);
+    height: calc(100% - 40px);
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transform: translate(-50%, -50%);
+    transition: all 300ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    -moz-transition: all 300ms ease-in-out;
+    -o-transition: all 300ms ease-in-out;
+    -ms-transition: all 300ms ease-in-out;
+}
+
+.image-and-title-caption-container:hover .title-caption-container {
+    opacity: 1;
+}
+
+.title-caption {
+    color: white;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
 }
 
 
 @media only screen and (min-width: 992px){
-    .image-container {
+    .image-and-title-caption-container {
         padding: 5px;
         width: 20%;
-        box-sizing: border-box;
+    }
+
+    .title-caption-container {
     }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px){
-    .image-container {
+    .image-and-title-caption-container {
         padding: 8px;
         width: 25%;
-        box-sizing: border-box;
+    }
+
+    .title-caption-container {
     }
 }
 
 @media only screen and (max-width: 768px) {
-    .image-container {
+    .image-and-title-caption-container {
         padding: 10px;
         width: 50%;
-        box-sizing: border-box;
+    }
+
+    .title-caption-container {
     }
 }

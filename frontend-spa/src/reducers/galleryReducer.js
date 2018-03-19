@@ -38,6 +38,33 @@ const galleryReducer = (state = {
       };
       break;
 
+    case "CHOOSE_PREVIOUS_PICTURE":
+      var newIndex = state.indexOfChosenImage
+      if (newIndex < state.images.length - 1)
+        newIndex++
+      state = {
+        ...state,
+        indexOfChosenImage: newIndex,
+      };
+      break;
+
+    case "CHOOSE_NEXT_PICTURE":
+      var newIndex = state.indexOfChosenImage
+      if (0 < newIndex)
+        newIndex--
+      state = {
+        ...state,
+        indexOfChosenImage: newIndex,
+      };
+      break;
+
+    case "STOP_ZOOMING_IMAGE":
+      state = {
+        ...state,
+        indexOfChosenImage: -1,
+      };
+      break;
+
     default:
       break;
   }

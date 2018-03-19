@@ -64,11 +64,8 @@ class NavigationGallery extends Component {
       <div className="gallery">
         <Masonry options={masonryOptions} >
           {
-            this.props.images.map((image, index) => (<Image key={index}
-                                                            smallUrl={image.smallUrl}
-                                                            title={image.title}
-                                                            index={index}
-            />))
+            this.props.images.map((image, index) => (
+                <Image key={index} smallUrl={image.smallUrl} title={image.title} index={index} />))
           }
         </Masonry>
         {

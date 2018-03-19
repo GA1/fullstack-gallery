@@ -1,11 +1,7 @@
 var express = require('express');
+var { getImages } = require('./http/flickrApi');
 
 var app = express();
-
-app.get('/api/v1/images', function (req, res) {
-  var numbers = [2, 5, 7]
-  res.json(numbers.map(n => n*2))
-});
 
 app.get('/api/v1/images/randomImages', function (req, res) {
   var img1 = {
@@ -22,6 +18,18 @@ app.get('/api/v1/images/randomImages', function (req, res) {
       result.push(img2)
   }
   res.json(result);
+});
+
+app.get('/api/v1/images/sportImages', function (req, res) {
+  let pageNumber = req.query.pageNumber;
+  let sucCallback = function(result) {
+    res.json(result)
+  };
+  let errCallback = function(error) {
+    console.log(error)
+    res.json([])
+  };
+  getImages(pageNumber, sucCallback, errCallback)
 });
 
 app.use('/', express.static('public'));

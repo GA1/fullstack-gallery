@@ -15,6 +15,6 @@ npm start
 
 run the app in the development mode (it will keep reloading on any code change):
 ```
-npx nodemon npm start
+export FLICKR_API_KEY={YOUR_FLICKR_API_KEY} && npx nodemon npm start
 
 ```

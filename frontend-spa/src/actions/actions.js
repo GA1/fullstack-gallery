@@ -18,3 +18,12 @@ export function stopLoadingImagesFromBackend(images) {
     type: "STOP_LOADING_IMAGES_FROM_BACKEND",
   };
 }
+
+export function choosePicture(indexOfChosenImage) {
+  return {
+    type: "CHOOSE_PICTURE",
+    payload: {
+      indexOfChosenImage: indexOfChosenImage,
+    },
+  };
+}

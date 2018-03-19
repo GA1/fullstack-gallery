@@ -6,6 +6,7 @@ import { addImagesReceivedFromBackend, startLoadingImagesFromBackend,
   stopLoadingImagesFromBackend } from '../actions/Actions'
 import Image from "./Image";
 import CircularProgressBar from "./CircularProgressBar";
+import ZoomGallery from './ZoomGallery'
 var Masonry = require('react-masonry-component');
 
 class Gallery extends Component {
@@ -66,11 +67,15 @@ class Gallery extends Component {
             this.props.images.map((image, index) => (<Image key={index}
                                                             smallUrl={image.smallUrl}
                                                             title={image.title}
+                                                            index={image.index}
             />))
           }
         </Masonry>
         {
           this.props.isLoading && <CircularProgressBar/>
+        }
+        {
+          this.props.indexOfChosenImage !== -1 && <ZoomGallery/>
         }
       </div>
     );
@@ -83,6 +88,7 @@ const mapStateToProps = (state) => {
     images: state.galleryReducer.images,
     isLoading: state.galleryReducer.isLoading,
     nextPageNumber: state.galleryReducer.nextPageNumber,
+    indexOfChosenImage: state.galleryReducer.indexOfChosenImage
   };
 };
 

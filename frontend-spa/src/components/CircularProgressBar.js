@@ -5,9 +5,9 @@ class CircularProgressBar extends Component {
 
   render() {
     return (
-        <div className="loader-container">
-          <div className="loader" />
-        </div>
+      <div className="loader-container">
+        <div className="loader" />
+      </div>
     );
   }
 }

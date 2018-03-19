@@ -14,7 +14,8 @@ describe('galleryReducer', () => {
     expect(r({
       images: [],
       isLoading: true,
-      nextPageNumber: 1
+      nextPageNumber: 1,
+      indexOfChosenImage: -1,
     }, {
       type: "ADD_IMAGES_FROM_BACKEND",
       payload: {
@@ -24,6 +25,7 @@ describe('galleryReducer', () => {
         images: [dummyImage],
         isLoading: false,
         nextPageNumber: 2,
+      indexOfChosenImage: -1,
       }
     )
   })
@@ -33,6 +35,7 @@ describe('galleryReducer', () => {
       images: [dummyImage],
       isLoading: false,
       nextPageNumber: 2,
+      indexOfChosenImage: -1,
     }, {
       type: "ADD_IMAGES_FROM_BACKEND",
       payload: {
@@ -41,7 +44,8 @@ describe('galleryReducer', () => {
     })).toEqual({
         images: [dummyImage, dummyImage2],
         isLoading: false,
-      nextPageNumber: 3,
+        nextPageNumber: 3,
+        indexOfChosenImage: -1,
       }
     )
   })
@@ -51,12 +55,14 @@ describe('galleryReducer', () => {
       images: [],
       isLoading: false,
       nextPageNumber: 2,
+      indexOfChosenImage: -1,
     }, {
       type: "START_LOADING_IMAGES_FROM_BACKEND",
     })).toEqual({
         images: [],
         isLoading: true,
-      nextPageNumber: 2,
+        nextPageNumber: 2,
+        indexOfChosenImage: -1,
       }
     )
   })
@@ -66,12 +72,14 @@ describe('galleryReducer', () => {
       images: [],
       isLoading: true,
       nextPageNumber: 2,
+      indexOfChosenImage: -1,
     }, {
       type: "STOP_LOADING_IMAGES_FROM_BACKEND",
     })).toEqual({
         images: [],
         isLoading: false,
         nextPageNumber: 2,
+        indexOfChosenImage: -1,
       }
     )
   })

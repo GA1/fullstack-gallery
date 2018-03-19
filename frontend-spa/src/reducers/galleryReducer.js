@@ -3,6 +3,7 @@ const galleryReducer = (state = {
   images: [],
   isLoading: false,
   nextPageNumber: 1,
+  indexOfChosenImage: -1
 }, action) => {
 
   var payload = action.payload
@@ -27,6 +28,13 @@ const galleryReducer = (state = {
       state = {
         ...state,
         isLoading: false,
+      };
+      break;
+
+    case "CHOOSE_PICTURE":
+      state = {
+        ...state,
+        indexOfChosenImage: payload.indexOfChosenImage,
       };
       break;
 

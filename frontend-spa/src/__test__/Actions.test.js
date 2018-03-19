@@ -34,4 +34,13 @@ describe('actions', () => {
     expect(actions.stopLoadingImagesFromBackend()).toEqual(expectedAction)
   })
 
+  it('should create an action to stop loading images from backend', () => {
+    const expectedAction = {
+      type: "STOP_LOADING_IMAGES_FROM_BACKEND",
+    }
+    expect(actions.stopLoadingImagesFromBackend()).toEqual(expectedAction)
+  })
+
+
+
 })

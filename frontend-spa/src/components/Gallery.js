@@ -4,11 +4,8 @@ import '../css/Gallery.css';
 import axios from 'axios'
 import { addImagesReceivedFromBackend, startLoadingImagesFromBackend,
   stopLoadingImagesFromBackend } from '../actions/Actions'
-import Image from "./Image";
-import CircularProgressBar from "./CircularProgressBar";
 import ZoomGallery from './ZoomGallery'
 import NavigationGallery from "./NavigationGallery";
-var Masonry = require('react-masonry-component');
 
 class Gallery extends Component {
 
@@ -57,17 +54,16 @@ class Gallery extends Component {
   }
 
   render() {
-    var masonryOptions = {
-      transitionDuration: 300
-    };
 
+    let someImageChosen = this.props.indexOfChosenImage !== -1
+    let noImageChosen = !someImageChosen
     return (
       <div className="gallery">
         {
-          this.props.indexOfChosenImage === -1 && <NavigationGallery/>
+          noImageChosen && <NavigationGallery/>
         }
         {
-          this.props.indexOfChosenImage !== -1 && <ZoomGallery/>
+          someImageChosen && <ZoomGallery/>
         }
       </div>
     );

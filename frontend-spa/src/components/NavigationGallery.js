@@ -67,7 +67,7 @@ class NavigationGallery extends Component {
             this.props.images.map((image, index) => (<Image key={index}
                                                             smallUrl={image.smallUrl}
                                                             title={image.title}
-                                                            index={image.index}
+                                                            index={index}
             />))
           }
         </Masonry>

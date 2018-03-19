@@ -5,7 +5,11 @@ var app = express();
 app.use(express.static('public'));
 
 app.get('/api/v1/images', function (req, res) {
-  res.json("hello")
+  var numbers = [2, 5, 7]
+  numbers.forEach(n => {
+    console.log(n)
+  })
+  res.json(numbers.map(n => n*2))
 });
 
 

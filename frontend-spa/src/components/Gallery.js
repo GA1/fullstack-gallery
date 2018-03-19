@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import '../css/Gallery.css';
 import axios from 'axios'
-import { addImagesReceivedFromBackend } from '../actions/actions'
+import { addImagesReceivedFromBackend } from '../actions/Actions'
 import Image from "./Image";
 var Masonry = require('react-masonry-component');
 

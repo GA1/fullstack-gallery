@@ -2,6 +2,7 @@ import r from '../reducers/galleryReducer'
 
 describe('galleryReducer', () => {
 
+
   it('should properly add images from first page', () => {
     expect(r({
       images: [],

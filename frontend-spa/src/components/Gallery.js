@@ -5,6 +5,7 @@ import axios from 'axios'
 import { addImagesReceivedFromBackend, startLoadingImagesFromBackend,
   stopLoadingImagesFromBackend } from '../actions/Actions'
 import Image from "./Image";
+import CircularProgressBar from "./CircularProgressBar";
 var Masonry = require('react-masonry-component');
 
 class Gallery extends Component {
@@ -63,6 +64,9 @@ class Gallery extends Component {
             this.props.images.map((image, index) => (<Image key={index} url={image.url} />))
           }
         </Masonry>
+        {
+          this.props.isLoading && <CircularProgressBar/>
+        }
       </div>
     );
   }

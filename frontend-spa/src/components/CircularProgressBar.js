@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/loader.css';
+import '../css/CircularProgressBar.css';
 
 class CircularProgressBar extends Component {
 

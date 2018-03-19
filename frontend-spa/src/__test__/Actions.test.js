@@ -59,7 +59,7 @@ describe('actions', () => {
     const expectedAction = {
       type: "STOP_ZOOMING_IMAGE",
     }
-    expect(actions.stopZoomingPicture()).toEqual(expectedAction)
+    expect(actions.stopZoomingImage()).toEqual(expectedAction)
   })
 
 

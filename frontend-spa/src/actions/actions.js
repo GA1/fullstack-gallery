@@ -40,7 +40,7 @@ export function chooseNextImage() {
   };
 }
 
-export function stopZoomingPicture() {
+export function stopZoomingImage() {
   return {
     type: "STOP_ZOOMING_IMAGE",
   };

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
 import '../css/ZoomGallery.css';
-import { choosePreviousImage, chooseNextImage, stopZoomingPicture } from '../actions/Actions'
+import { choosePreviousImage, chooseNextImage, stopZoomingImage } from '../actions/Actions'
 
 class ZoomGallery extends Component {
 
@@ -15,7 +15,7 @@ class ZoomGallery extends Component {
         {
           !this.props.isLast && <div className="arrow right" onClick={() => this.props.chooseNextPicture()} />
         }
-        <div className="close" onClick={() => this.props.stopZoomingPicture()}/>
+        <div className="close" onClick={() => this.props.stopZoomingImage()}/>
       </div>
     );
   }
@@ -40,8 +40,8 @@ const mapDispatchToProps = (dispatch) => {
     chooseNextPicture: () => {
       dispatch(chooseNextImage());
     },
-    stopZoomingPicture: () => {
-      dispatch(stopZoomingPicture());
+    stopZoomingImage: () => {
+      dispatch(stopZoomingImage());
     },
   };
 };

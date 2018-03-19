@@ -1,7 +1,7 @@
 import r from '../reducers/galleryReducer'
 import {
   addImagesReceivedFromBackend, startLoadingImagesFromBackend,
-  stopLoadingImagesFromBackend, choosePreviousImage, chooseNextImage, stopZoomingPicture, chooseImage
+  stopLoadingImagesFromBackend, choosePreviousImage, chooseNextImage, stopZoomingImage, chooseImage
 } from '../actions/Actions'
 
 describe('galleryReducer', () => {
@@ -161,5 +161,22 @@ describe('galleryReducer', () => {
       }
     )
   })
+
+  it('stop zooming image should correctly stop zooming the image', () => {
+    expect(r({
+          images: [dummyImage, dummyImage, dummyImage, dummyImage],
+          isLoading: false,
+          nextPageNumber: 2,
+          indexOfChosenImage: 2,
+        }, stopZoomingImage()
+    )).toEqual({
+          images: [dummyImage, dummyImage, dummyImage, dummyImage],
+          isLoading: false,
+          nextPageNumber: 2,
+          indexOfChosenImage: -1,
+        }
+    )
+  })
+
 
 })

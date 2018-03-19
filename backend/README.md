@@ -4,6 +4,11 @@ install the dependencies with:
 npm install 
 ```
 
+test the app with:
+```
+npm test
+```
+
 run the app in the development mode (it will keep reloading on any code change)
 ```
 npx nodemon npm start

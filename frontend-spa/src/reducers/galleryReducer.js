@@ -1,6 +1,7 @@
 
 const galleryReducer = (state = {
   images: [],
+  isLoading: false,
 }, action) => {
 
   var payload = action.payload
@@ -8,7 +9,21 @@ const galleryReducer = (state = {
     case "ADD_IMAGES_FROM_BACKEND":
       state = {
         ...state,
-        images: payload.images
+        images: state.images.concat(payload.images),
+      };
+      break;
+
+    case "START_LOADING_IMAGES_FROM_BACKEND":
+      state = {
+        ...state,
+        isLoading: true,
+      };
+      break;
+
+    case "STOP_LOADING_IMAGES_FROM_BACKEND":
+      state = {
+        ...state,
+        isLoading: false,
       };
       break;
 

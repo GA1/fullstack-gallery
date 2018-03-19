@@ -6,3 +6,15 @@ export function addImagesReceivedFromBackend(images) {
     },
   };
 }
+
+export function startLoadingImagesFromBackend(images) {
+  return {
+    type: "START_LOADING_IMAGES_FROM_BACKEND",
+  };
+}
+
+export function stopLoadingImagesFromBackend(images) {
+  return {
+    type: "STOP_LOADING_IMAGES_FROM_BACKEND",
+  };
+}

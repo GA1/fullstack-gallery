@@ -6,7 +6,6 @@ import { addImagesReceivedFromBackend, startLoadingImagesFromBackend,
   stopLoadingImagesFromBackend } from '../actions/Actions'
 import Image from "./Image";
 import CircularProgressBar from "./CircularProgressBar";
-import ZoomGallery from './ZoomGallery'
 var Masonry = require('react-masonry-component');
 
 class NavigationGallery extends Component {

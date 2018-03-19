@@ -19,29 +19,29 @@ export function stopLoadingImagesFromBackend() {
   };
 }
 
-export function choosePicture(indexOfChosenImage) {
+export function chooseImage(indexOfChosenImage) {
   return {
-    type: "CHOOSE_PICTURE",
+    type: "CHOOSE_IMAGE",
     payload: {
       indexOfChosenImage: indexOfChosenImage,
     },
   };
 }
 
-export function choosePreviousPicture() {
+export function choosePreviousImage() {
   return {
-    type: "CHOOSE_PREVIOUS_PICTURE",
+    type: "CHOOSE_PREVIOUS_IMAGE",
   };
 }
 
-export function chooseNextPicture() {
+export function chooseNextImage() {
   return {
-    type: "CHOOSE_NEXT_PICTURE",
+    type: "CHOOSE_NEXT_IMAGE",
   };
 }
 
 export function stopZoomingPicture() {
   return {
-    type: "STOP_ZOOMING_PICTURE",
+    type: "STOP_ZOOMING_IMAGE",
   };
 }

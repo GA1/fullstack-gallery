@@ -5,7 +5,7 @@ const galleryReducer = (state = {
   nextPageNumber: 1,
   indexOfChosenImage: -1
 }, action) => {
-
+  var newIndex = state.indexOfChosenImage
   var payload = action.payload
   switch (action.type) {
     case "ADD_IMAGES_FROM_BACKEND":
@@ -31,15 +31,14 @@ const galleryReducer = (state = {
       };
       break;
 
-    case "CHOOSE_PICTURE":
+    case "CHOOSE_IMAGE":
       state = {
         ...state,
         indexOfChosenImage: payload.indexOfChosenImage,
       };
       break;
 
-    case "CHOOSE_PREVIOUS_PICTURE":
-      var newIndex = state.indexOfChosenImage
+    case "CHOOSE_PREVIOUS_IMAGE":
       if (0 < newIndex)
         newIndex--
       state = {
@@ -48,8 +47,7 @@ const galleryReducer = (state = {
       };
       break;
 
-    case "CHOOSE_NEXT_PICTURE":
-      var newIndex = state.indexOfChosenImage
+    case "CHOOSE_NEXT_IMAGE":
       if (newIndex < state.images.length - 1)
         newIndex++
       state = {

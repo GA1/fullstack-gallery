@@ -1,10 +1,8 @@
-
-
-export function someAction(downloadedImages) {
+export function addImagesReceivedFromBackend(images) {
   return {
-    type: "SOME_NOT_YET_IMPLEMENTED_ACTION",
+    type: "ADD_IMAGES_FROM_BACKEND",
     payload: {
-      downloadedImages: []
+      images: images,
     },
   };
 }

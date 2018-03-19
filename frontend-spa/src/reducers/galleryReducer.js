@@ -1,12 +1,14 @@
 
-const articleDataReducer = (state = {
+const galleryReducer = (state = {
   images: [],
 }, action) => {
 
+  var payload = action.payload
   switch (action.type) {
-    case "SOME_NOT_YET_IMPLEMENTED_ACTION":
+    case "ADD_IMAGES_FROM_BACKEND":
       state = {
         ...state,
+        images: payload.images
       };
       break;
 
@@ -16,4 +18,4 @@ const articleDataReducer = (state = {
   return state;
 };
 
-export default articleDataReducer;
+export default galleryReducer;

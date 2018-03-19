@@ -40,9 +40,10 @@ class Gallery extends Component {
   }
 
   getImagesFromBackend() {
+    console.log(this.props.nextPageNumber)
     var $this = this
     this.props.startLoadingImagesFromBackend()
-    axios.get('/api/v1/images/sportImages')
+    axios.get('/api/v1/images/sportImages?page=' + this.props.nextPageNumber)
       .then((resp) => {
         let body = resp.data;
         $this.props.addImagesReceivedFromBackend(body)
@@ -78,6 +79,7 @@ const mapStateToProps = (state) => {
   return {
     images: state.galleryReducer.images,
     isLoading: state.galleryReducer.isLoading,
+    nextPageNumber: state.galleryReducer.nextPageNumber,
   };
 };
 

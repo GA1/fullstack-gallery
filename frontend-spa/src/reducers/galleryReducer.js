@@ -2,6 +2,7 @@
 const galleryReducer = (state = {
   images: [],
   isLoading: false,
+  nextPageNumber: 1,
 }, action) => {
 
   var payload = action.payload
@@ -11,6 +12,7 @@ const galleryReducer = (state = {
         ...state,
         images: state.images.concat(payload.images),
         isLoading: false,
+        nextPageNumber: state.nextPageNumber + 1
       };
       break;
 

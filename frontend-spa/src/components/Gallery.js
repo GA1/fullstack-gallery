@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import '../css/Gallery.css';
 import axios from 'axios'
 import { addImagesReceivedFromBackend } from '../actions/actions'
+import Image from "./Image";
+var Masonry = require('react-masonry-component');
 
 class Gallery extends Component {
 
@@ -24,14 +26,17 @@ class Gallery extends Component {
   }
 
   render() {
+    var masonryOptions = {
+      transitionDuration: 300
+    };
+
     return (
-      <div className="images-container">
-        {
-          this.props.images.map((image, index) => (
-                image.url
-            )
-          )
-        }
+      <div className="gallery">
+        <Masonry options={masonryOptions} >
+          {
+            this.props.images.map((image, index) => (<Image url={image.url} />))
+          }
+        </Masonry>
       </div>
     );
   }

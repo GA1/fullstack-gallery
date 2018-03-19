@@ -1,0 +1,9 @@
+.image-container {
+    padding: 5px;
+    width: 20%;
+    box-sizing: border-box;
+}
+
+.gallery-image {
+    max-width: 100%;
+}

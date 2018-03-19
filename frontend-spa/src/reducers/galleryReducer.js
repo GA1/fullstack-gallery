@@ -40,8 +40,8 @@ const galleryReducer = (state = {
 
     case "CHOOSE_PREVIOUS_PICTURE":
       var newIndex = state.indexOfChosenImage
-      if (newIndex < state.images.length - 1)
-        newIndex++
+      if (0 < newIndex)
+        newIndex--
       state = {
         ...state,
         indexOfChosenImage: newIndex,
@@ -50,8 +50,8 @@ const galleryReducer = (state = {
 
     case "CHOOSE_NEXT_PICTURE":
       var newIndex = state.indexOfChosenImage
-      if (0 < newIndex)
-        newIndex--
+      if (newIndex < state.images.length - 1)
+        newIndex++
       state = {
         ...state,
         indexOfChosenImage: newIndex,

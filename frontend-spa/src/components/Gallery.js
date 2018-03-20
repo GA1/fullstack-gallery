@@ -56,6 +56,7 @@ class Gallery extends Component {
     let noImageChosen = !someImageChosen
     return (
       <div className="gallery">
+        <h1 className="gallary-title">Fullstack react gallery</h1>
         {
           noImageChosen && <NavigationGallery/>
         }

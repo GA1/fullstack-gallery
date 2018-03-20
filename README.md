@@ -1,5 +1,7 @@
 # fullstack-gallery
 
+prerequisites: `npm`, `npx`, `node`, a unix like system 
+
 Build and run the gallery in prod mode with this one liner:
 ```
 export FLICKR_API_KEY={YOUR_FLICKR_API_KEY} && sh build-and-run.sh
@@ -39,7 +41,7 @@ and full of cool features like: "do you want to run just one test?, just add '.o
 This is exactly what I needed for this task, to return the parts of the SPA as static files, and then from the client
 attack the server's API endpoint(s) 
 
-7. ES6 - write the code in a functional manner, great when operating on collections, it simplifies the flow.
+7. ES6 - write the code in a functional manner, great when operating on collections.
 
 8. react-masonry-component - the only external react component I use in the app, it implements the 
 masonry effect for the galllery. Please let me know if you would rather see me implement all the components by myself.
@@ -52,4 +54,5 @@ shell script because it is just simpler and clearly does the job of running the 
 as nothing was sad about possible extensions.
 3. Eject the create-react-app and tweak the dependencies.
 4. It would be be cool to navigate the pictures with on press left/right keys.
-  
+5. Loading of new images could happen not only on reaching the bottom of the page, but also on reaching the last image 
+in the Zoom mode (instead of hiding the right arrow on reaching the last downloaded photo)

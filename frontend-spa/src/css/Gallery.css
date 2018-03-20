@@ -4,3 +4,8 @@
     width: 100%;
     box-sizing: border-box;
 }
+
+.gallary-title {
+    text-align: center;
+    color: darkslategrey;
+}

@@ -20,7 +20,7 @@ function getImages(pageNumber, sucCallback, errCallback) {
   }
   axios.get(sportSearchUrl + pageNumber)
     .then(function(response) {
-      let photos = response.data['photos']['photo'];  // Flickr api returns incorrectly an array of photos at '... .photo'
+      let photos = response.data['photos']['photo'];  // Flickr api returns incorrectly an array of photos at '.photo'
                                                       // probably a legacy bug which persisted, looks strange but this is how we have to use it
       let photosObjects = mapFlickrPhotosToAppPhotos(photos)
       sucCallback(photosObjects)

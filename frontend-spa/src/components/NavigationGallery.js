@@ -40,7 +40,6 @@ class NavigationGallery extends Component {
   }
 
   getImagesFromBackend() {
-    console.log(this.props.nextPageNumber)
     var $this = this
     this.props.startLoadingImagesFromBackend()
     axios.get('/api/v1/images/sportImages?pageNumber=' + this.props.nextPageNumber)

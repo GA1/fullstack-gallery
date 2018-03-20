@@ -8,7 +8,7 @@
     "supertest": "^3.0.0"
   },
   "scripts": {
-    "start": "node src/app.js",
+    "start": "node src/server.js",
     "test": "jest __test__ --watch"
   },
   "devDependencies": {

@@ -25,4 +25,5 @@ class GalleryApp {
   }
 
 }
+
 module.exports.GalleryApp = GalleryApp;

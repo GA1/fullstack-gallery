@@ -16,4 +16,10 @@ function mapFlickrPhoto(flickrPhotoObject) {
   return result
 }
 
-module.exports.mapFlickrPhoto = mapFlickrPhoto;
+function mapFlickrPhotos(flickrPhotos) {
+  return flickrPhotos.map(flickrPhoto => {
+    return mapFlickrPhoto(flickrPhoto)
+  })
+}
+
+module.exports.mapFlickrPhotos = mapFlickrPhotos;

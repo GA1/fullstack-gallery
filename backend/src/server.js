@@ -1,5 +1,5 @@
 var { getImages } = require('./http/flickrApi');
-const { GalleryApp } = require('./galleryApp')
+var  { GalleryApp } = require('./galleryApp')
 
 var galleryApp = new GalleryApp(getImages)
 

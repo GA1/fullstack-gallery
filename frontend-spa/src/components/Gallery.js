@@ -38,7 +38,6 @@ class Gallery extends Component {
   }
 
   getImagesFromBackend() {
-    console.log(this.props.nextPageNumber)
     var $this = this
     this.props.startLoadingImagesFromBackend()
     axios.get('/api/v1/images/sportImages?pageNumber=' + this.props.nextPageNumber)
@@ -53,7 +52,6 @@ class Gallery extends Component {
   }
 
   render() {
-
     let someImageChosen = this.props.indexOfChosenImage !== -1
     let noImageChosen = !someImageChosen
     return (
@@ -71,11 +69,12 @@ class Gallery extends Component {
 }
 
 const mapStateToProps = (state) => {
+  let r = state.galleryReducer;
   return {
-    images: state.galleryReducer.images,
-    isLoading: state.galleryReducer.isLoading,
-    nextPageNumber: state.galleryReducer.nextPageNumber,
-    indexOfChosenImage: state.galleryReducer.indexOfChosenImage
+    images: r.images,
+    isLoading: r.isLoading,
+    nextPageNumber: r.nextPageNumber,
+    indexOfChosenImage: r.indexOfChosenImage
   };
 };
 

@@ -9,7 +9,6 @@ import NavigationGallery from "./NavigationGallery";
 
 class Gallery extends Component {
 
-
   constructor() {
     super();
     this.DISTANCE_FROM_END_TO_TRIGGER_SCROLL_DOWN_REACHED = 100;

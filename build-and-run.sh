@@ -13,5 +13,9 @@ rm -rf public
 mkdir public
 mv ../frontend-spa/build/* public
 
+# make production code obfuscated
+rm public/static/js/*.js.map
+rm public/static/css/*.css.map
+
 # run
 npm run start

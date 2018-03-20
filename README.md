@@ -49,5 +49,7 @@ masonry effect for the galllery. Please let me know if you would rather see me i
 1. Use webpack for node backend too (create-react-app uses webpack in the frontend already). I chose to use a tailor-made
 shell script because it is just simpler and clearly does the job of running the demo well.
 2. I stood before a choice of making the API simple, or more complicated but open for extensions. I choose the first
-as nothing was sad about possible extensions. 
-3. Eject the create-react-app and tweak the dependencies. 
+as nothing was sad about possible extensions.
+3. Eject the create-react-app and tweak the dependencies.
+4. It would be be cool to navigate the pictures with on press left/right keys.
+  

@@ -21,10 +21,24 @@
 .arrow {
     position: absolute;
     top: 50%;
+    opacity: 0.3;
     border: solid white;
     border-width: 0 10px 10px 0;
     display: inline-block;
     padding: 10px;
+}
+
+.arrow:hover {
+    opacity: 1;
+}
+
+.title {
+    color: white;
+    position: absolute;
+    font-size: 30px;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, 0);
 }
 
 .left {

@@ -16,6 +16,7 @@ class ZoomGallery extends Component {
           !this.props.isLast && <div className="arrow right" onClick={() => this.props.chooseNextPicture()} />
         }
         <div className="close" onClick={() => this.props.stopZoomingImage()}/>
+        <div className="title"> {this.props.title} </div>
       </div>
     );
   }
@@ -25,8 +26,10 @@ const mapStateToProps = (state) => {
   var reducer = state.galleryReducer
   var images = reducer.images
   let indexOfChosenImage = reducer.indexOfChosenImage;
+  let chosenImages = images[indexOfChosenImage];
   return {
-    imageUrl: images[indexOfChosenImage].bigUrl,
+    imageUrl: chosenImages.bigUrl,
+    title: chosenImages.title,
     isLast: indexOfChosenImage === images.length - 1,
     isFirst: indexOfChosenImage === 0,
   };

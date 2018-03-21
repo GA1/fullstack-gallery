@@ -1,6 +1,27 @@
 # fullstack-gallery
 
-prerequisites: `npm`, `npx`, `node`, a unix like system 
+Find more info in the README files in corresponding `frontend-spa` and `backend` folders. 
+
+#### prerequisites:
+`npm`, `npx`, `node`, a unix like system 
+
+#### Development mode 
+
+To build run the gallery in development mode open a console tab and type:
+```
+cd backend && npm install && export FLICKR_API_KEY={YOUR_FLICKR_API_KEY} && npx nodemon npm start
+```
+and in another console tab:
+```
+cd frontend-spa && npm install && npm start
+```
+
+then go to:
+```
+localhost:3000
+```
+
+#### Prod mode
 
 Build and run the gallery in prod mode with this one liner:
 ```
@@ -16,7 +37,7 @@ localhost:4000
 
 It will return a SPA gallery
 
-### Find below short explanations for the choices I took when creating the app:
+### Explanations for the choices I made when creating the app:
 
 1. Git - I divided the project into two 2 parts to keep the clear distinction between the frontend SPA and
 the backend. I keep it in one repo though as it make it easier to see versions from the same phases of development: 
@@ -48,11 +69,17 @@ masonry effect for the galllery. Please let me know if you would rather see me i
 
 ### Possible Improvements:
 
-1. Use webpack for node backend too (create-react-app uses webpack in the frontend already). I chose to use a tailor-made
+I have not implement any of those as they were not clearly specified, please let me know if you think some of the 
+ones below are crucial, I could add them in 24h if you request it. 
+
+1. Caching - the js/css bundles could have some Cache-Control or Etag headers specified. If someone decides to not cache
+index.html (though it could be useful too), there's no problem as, js/css contain hashes in their file names.  
+2. Use webpack for node backend too (create-react-app uses webpack in the frontend already). I chose to use a tailor-made
 shell script because it is just simpler and clearly does the job of running the demo well.
-2. I stood before a choice of making the API simple, or more complicated but open for extensions. I choose the first
-as nothing was sad about possible extensions.
-3. Eject the create-react-app and tweak the dependencies.
-4. It would be be cool to navigate the pictures with on press left/right keys.
-5. Loading of new images could happen not only on reaching the bottom of the page, but also on reaching the last image 
+3. Making the api a bit more complicated, but more open for extensions
+4. Eject the create-react-app and tweak the dependencies.
+5. It would be be cool to navigate the pictures with on press left/right keys.
+6. Loading of new images could happen not only on reaching the bottom of the page, but also on reaching the last image 
 in the Zoom mode (instead of hiding the right arrow on reaching the last downloaded photo)
+7. UI, e2e testing
+8. include test runs into the build process

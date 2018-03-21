@@ -6,7 +6,6 @@ import { chooseImage } from '../actions/Actions'
 class Image extends Component {
 
   render() {
-    console.log(this.props.index)
     return (
       <div className="image-and-title-caption-container">
         <img src={this.props.smallUrl} className="gallery-image" alt="From flicker"/>
